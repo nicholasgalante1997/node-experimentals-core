@@ -1,0 +1,19 @@
+{
+  "name": "node-experimentals",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nick Galante <nicholasgalante1997@gmail.com>",
+  "scripts": {
+    "clean:deps": "concurrently \"wsrun --parallel clean:node-modules\"",
+    "build": "concurrently \"wsrun --serial build\"",
+    "fmt": "concurrently \"wsrun --parallel lint:fix\"",
+    "install": "concurrently \"wsrun --parallel install\""
+  },
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "wsrun": "^5.2.4"
+  }
+}

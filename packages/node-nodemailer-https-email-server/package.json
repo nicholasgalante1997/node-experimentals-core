@@ -1,0 +1,12 @@
+{
+  "name": "node-nodemailer-https-email-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "nodemailer": "^6.7.5"
+  }
+}
