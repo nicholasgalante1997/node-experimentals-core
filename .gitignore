@@ -4,3 +4,5 @@ node_modules
 *.lock
 *-dist/
 *_dist/
+dist/
+lib/

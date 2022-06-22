@@ -1,0 +1,9 @@
+{
+  "name": "simple-crypto-node-blockchain",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
