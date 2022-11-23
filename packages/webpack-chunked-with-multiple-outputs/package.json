@@ -4,7 +4,9 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve --config configuration/dev-server/webpack.development.js",
+    "build": "webpack --config configuration/build/webpack.production.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +14,7 @@
     "@nickgdev/hellerui": "^0.0.45",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.3",
     "react-router": "^6.4.3",
     "react-router-dom": "^6.4.3",
     "sass": "^1.56.1",
@@ -25,6 +28,8 @@
     "@babel/preset-typescript": "^7.18.6",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "babel-loader": "^9.1.0",
     "css-loader": "^6.7.2",
     "dotenv": "^16.0.3",
     "html-webpack-plugin": "^5.5.0",

@@ -5,8 +5,13 @@ export type Pokemon = {
     region: Region;
     name: string;
     type: 'water' | 'fire' | 'flying' | 'dark' | 'psychic' | 'dragon' | 'electric' | 'grass' | 'ice' | 'steel' | 'fighting' | 'ghost' | 'fairy' | 'normal';
-    pokedexNumericalIndex: {
+    pokedexNumericalIndex?: {
         pokedex: number | string;
         key: number | string;
     }
 };
+
+export type RegionRepresentative = {
+    region: Region;
+    
+}

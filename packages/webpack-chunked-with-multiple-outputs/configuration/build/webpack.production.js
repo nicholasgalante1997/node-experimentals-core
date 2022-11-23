@@ -67,7 +67,7 @@ module.exports = {
         }),
         new EnvironmentPlugin({ ...process.env }),
         new ModuleFederationPlugin({
-            name: '@pokemoncenter',
+            name: 'pokemoncenter',
             filename: 'remoteEntry.js',
             exposes: {
                 './Manifest': './src/index'
