@@ -1,17 +1,10 @@
-export type Region = "Sinnoh" | "Hoenn" | "Kanto" | "Johto" | "Galar" | "Hisui" | "Alola";
+import { Pokemon } from './pokemon';
+import { PokemonTrainer } from './trainer';
 
-export type Pokemon = {
-    charImg: string;
-    region: Region;
-    name: string;
-    type: 'water' | 'fire' | 'flying' | 'dark' | 'psychic' | 'dragon' | 'electric' | 'grass' | 'ice' | 'steel' | 'fighting' | 'ghost' | 'fairy' | 'normal';
-    pokedexNumericalIndex?: {
-        pokedex: number | string;
-        key: number | string;
-    }
-};
+export type Region = "Sinnoh" | "Hoenn" | "Kanto" | "Johto" | "Galar" | "Hisui" | "Alola";
 
 export type RegionRepresentative = {
     region: Region;
-    
+    pokemon: Pokemon;
+    trainer: PokemonTrainer;
 }
