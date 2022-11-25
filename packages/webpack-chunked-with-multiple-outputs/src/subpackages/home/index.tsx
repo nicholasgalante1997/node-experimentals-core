@@ -1,11 +1,12 @@
 import React from 'react';
-import { Container } from '@nickgdev/hellerui';
+import { Button, Container } from '@nickgdev/hellerui';
 
 import { PokemonComponent } from '../shared/components';
 import { useGetAllPokemon, useGetPokemonByName } from '../shared/contexts';
 import * as inlineStyle from '../shared/styles/inline';
 
 import '../shared/styles/index.scss';
+import '@nickgdev/hellerui/lib/index.css';
 
 type HomePageProps = {
     navFn?: () => void;
@@ -52,14 +53,15 @@ export function HomePage(props: HomePageProps){
                 tabIndex={0}
             >
                 <h1 className="poke-font font-with-border-main">Catch `Em All!</h1>
-                <button 
-                    id="pika-home-trainer-explore-button"
-                    tabIndex={0} 
+                <Button 
                     aria-label='explore pokemon regions' 
+                    className='home-button'
+                    size='lg'
                     onClick={navFn}
+                    ghost
                 >
                     explore pokemon regions
-                </button>
+                </Button>
             </Container>
         </Container>
     )

@@ -65,33 +65,12 @@ module.exports = {
             chunks: ['region'],
             excludeChunks: ['home']
         }),
-        new EnvironmentPlugin({ ...process.env }),
-        new ModuleFederationPlugin({
-            name: 'pokemoncenter',
-            filename: 'remoteEntry.js',
-            exposes: {
-                './Manifest': './src/index'
-            },
-            shared: {
-                react: {
-                    requiredVersion: packageJson.dependencies.react,
-                    singleton: true
-                },
-                'react-dom': {
-                    requiredVersion: packageJson.dependencies['react-dom'],
-                    singleton: true
-                },
-                'styled-components': {
-                    requiredVersion: packageJson.dependencies['styled-components'],
-                    singleton: true,
-                }
-            }
-        })
+        new EnvironmentPlugin({ ...process.env })
     ],
     output: {
         clean: true,
         publicPath: 'auto',
-        path: path.resolve(process.cwd(), 'build'),
+        path: path.resolve(process.cwd(), 'build-static'),
         filename: '[name].bundle.js'
     }
 };
