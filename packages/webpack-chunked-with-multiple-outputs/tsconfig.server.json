@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "lib": ["ESNext"],
+        "outDir": ".server",
+        "declaration": true,
+        "noEmit": false,
+        "strict": true,
+        "module": "CommonJS",
+        "moduleResolution": "NodeNext"
+    },
+    "include": ["./src/server/index.ts"],
+    "exclude": ["node_modules", "*.test.*, *.stories.(t|j)sx?"]
+}

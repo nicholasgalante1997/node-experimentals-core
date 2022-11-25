@@ -2,10 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const EnvironmentPlugin = webpack.EnvironmentPlugin;
-
-const packageJson = require('../../package.json');
 
 require('dotenv').config();
 
@@ -52,14 +49,14 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './html/home.html',
+            template: './.generated-markup/home.ssg.html',
             filename: 'home.html',
             inject: true,
             chunks: ['home'],
             excludeChunks: ['region']
         }),
         new HtmlWebpackPlugin({
-            template: './html/region.html',
+            template: './.generated-markup/region.ssg.html',
             filename: 'region.html',
             inject: true,
             chunks: ['region'],
@@ -70,7 +67,7 @@ module.exports = {
     output: {
         clean: true,
         publicPath: 'auto',
-        path: path.resolve(process.cwd(), 'build-static'),
+        path: path.resolve(process.cwd(), '.out'),
         filename: '[name].bundle.js'
     }
 };

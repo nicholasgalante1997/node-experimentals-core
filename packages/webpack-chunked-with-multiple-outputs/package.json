@@ -6,12 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve --config configuration/dev-server/webpack.development.js",
-    "build": "webpack --config configuration/build/webpack.production.js"
+    "build": "webpack --config configuration/build/webpack.production.js",
+    "build:server": "tsc --project tsconfig.server.json",
+    "compile-static-markup": "webpack --config configuration/build/webpack.static-markup.production.js",
+    "dehydrate-app": "node .generated-markup/compile-static-markup.js",
+    "start": "node .server/server/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@nickgdev/hellerui": "^0.0.45",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.3",
@@ -26,6 +32,8 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",

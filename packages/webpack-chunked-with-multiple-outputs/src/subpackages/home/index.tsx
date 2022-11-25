@@ -5,9 +5,6 @@ import { PokemonComponent } from '../shared/components';
 import { useGetAllPokemon, useGetPokemonByName } from '../shared/contexts';
 import * as inlineStyle from '../shared/styles/inline';
 
-import '../shared/styles/index.scss';
-import '@nickgdev/hellerui/lib/index.css';
-
 type HomePageProps = {
     navFn?: () => void;
 };

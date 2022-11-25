@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom/client';
 import { HomePage } from '../../subpackages/home';
 import { AggregateProvider } from '../../subpackages/shared';
 
-export function mountHomePageOnEl(el: HTMLElement) {
-    const root = ReactDOM.createRoot(el);
-    root.render(
-        <AggregateProvider>
-            <HomePage />
-        </AggregateProvider>
-    );
-}
+import '../../subpackages/shared/styles/index.scss';
+import '@nickgdev/hellerui/lib/index.css';
 
-mountHomePageOnEl(document.getElementById('pokemon-home-page-mount')!);
+ReactDOM.hydrateRoot(document.getElementById('react-agnostic-mount')!, (
+    <AggregateProvider>
+        <HomePage />
+    </AggregateProvider>
+));
