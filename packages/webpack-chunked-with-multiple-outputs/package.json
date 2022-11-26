@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve --config configuration/dev-server/webpack.development.js",
-    "build": "webpack --config configuration/build/webpack.production.js",
+    "build:pages": "webpack --config configuration/build/webpack.production.js",
     "build:server": "tsc --project tsconfig.server.json",
     "compile-static-markup": "webpack --config configuration/build/webpack.static-markup.production.js",
     "dehydrate-app": "node .generated-markup/compile-static-markup.js",
