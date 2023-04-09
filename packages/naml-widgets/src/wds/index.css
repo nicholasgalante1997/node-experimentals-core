@@ -3,11 +3,17 @@
   src: url("sunny.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: Fortnite;
+  src: url("fortnite.otf");
+}
+
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   background-color: cadetblue;
   margin: 0 auto;
   padding: 0px;
@@ -15,4 +21,9 @@ html, body {
 
 .hero {
   font-family: Textile, sans-serif;
+}
+
+.hero-subtitle {
+  font-family: Fortnite;
+  color: white;
 }

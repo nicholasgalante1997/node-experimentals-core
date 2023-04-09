@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 export const formatBackground = (background?: string) => {
   if (background) {
-    if (background.includes('gradient')) {
+    if (background.includes("gradient")) {
       return css`
         background-image: ${background};
       `;

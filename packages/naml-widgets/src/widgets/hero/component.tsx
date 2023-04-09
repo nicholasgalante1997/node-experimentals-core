@@ -16,6 +16,15 @@ type HeroComponentProps = {
   imageAltText?: string;
   imageClassname?: string;
   imageId?: string;
+  videoSrc?: string;
+  videoMediaType?: string;
+  videoSrcLowResFallback?: string;
+  videoLowResFallbackMediaType?: string;
+  videoPosterImage?: string;
+  controls?: boolean;
+  autoPlay?: boolean;
+  loop?: boolean;
+  muted?: boolean;
 };
 
 export type HeroWidgetProps = WidgetShellViewProps &
@@ -36,12 +45,19 @@ export function HeroWidget(props: HeroWidgetProps) {
     imageAltText,
     imageId,
     imageClassname,
+    videoMediaType,
+    videoSrc,
+    videoSrcLowResFallback,
+    videoLowResFallbackMediaType,
+    videoPosterImage,
+    loop,
+    muted,
+    controls,
+    autoPlay,
     children,
     ref,
     ...rest
   } = props;
-
-  console.log(rest.background);
 
   function renderContent() {
     if (text && imageSrc) {
@@ -67,18 +83,35 @@ export function HeroWidget(props: HeroWidgetProps) {
     if (!imageSrc && text) {
       return (
         <>
-          {
-            headingImpl(
-              textAsElement,
-              text,
-              textColor,
-              rest.gridNumber,
-              textClassname,
-              textId,
-            )
-          }
+          {headingImpl(
+            textAsElement,
+            text,
+            textColor,
+            rest.gridNumber,
+            textClassname,
+            textId,
+          )}
           {subtitle && <p>{subtitle}</p>}
         </>
+      );
+    }
+
+    if (videoSrc) {
+      return (
+        <video
+          preload="auto"
+          poster={videoPosterImage}
+          style={{ margin: "0 auto", padding: "0px", objectFit: 'cover' }}
+          controls={controls}
+          autoPlay={autoPlay}
+          muted={muted}
+          loop={loop}
+          width="100%"
+          height="100%"
+        >
+          <source src={videoSrc} type={videoMediaType} />
+          <source src={videoSrcLowResFallback} type={videoLowResFallbackMediaType} />
+        </video>
       );
     }
 
@@ -99,11 +132,15 @@ export function HeroWidget(props: HeroWidgetProps) {
       imageWidth,
       imageClassname,
       imageId,
+      videoLowResFallbackMediaType,
+      videoMediaType,
+      videoSrc,
+      videoSrcLowResFallback,
     ],
   );
 
   return (
-    <WidgetShell ref={ref} {...rest}>
+    <WidgetShell ref={ref} {...rest} p={videoSrc ? undefined : rest.p}>
       {content}
     </WidgetShell>
   );

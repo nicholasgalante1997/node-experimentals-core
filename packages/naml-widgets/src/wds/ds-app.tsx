@@ -26,7 +26,8 @@ const routeMeta = [
     component: HeroWidget,
     componentProps: {
       background: "linear-gradient(to right, cyan, violet)",
-      imageSrc: "https://w7.pngwing.com/pngs/97/276/png-transparent-pokemon-eevee-illustration-pokemon-go-pokemon-x-and-y-pikachu-eevee-pokemon-mammal-vertebrate-cartoon-thumbnail.png",
+      imageSrc:
+        "https://w7.pngwing.com/pngs/97/276/png-transparent-pokemon-eevee-illustration-pokemon-go-pokemon-x-and-y-pikachu-eevee-pokemon-mammal-vertebrate-cartoon-thumbnail.png",
       imageHeight: "200px",
       imageWidth: "auto",
       gridNumber: 5,
@@ -38,15 +39,41 @@ const routeMeta = [
     route: "hero-text-w-subtitle",
     component: HeroWidget,
     componentProps: {
-      background: "https://assets.fortnitecreativehq.com/wp-content/uploads/2020/11/24084718/7153-0441-1172.jpg",
-      text: 'Fortnite',
-      textElement: 'h3',
-      textColor: 'black',
-      subtitle: 'Come join the online sensation.',
+      background:
+        "https://assets.fortnitecreativehq.com/wp-content/uploads/2020/11/24084718/7153-0441-1172.jpg",
+      text: "Fortnite",
+      textElement: "h3",
+      textColor: "black",
+      subtitle: "Come join the online sensation.",
       gridNumber: 4,
       height: "300px",
       className: "hero-subtitle",
       p: 1,
+    },
+  },
+  {
+    route: "hero-video-player",
+    component: HeroWidget,
+    componentProps: {
+      background: "white",
+      height: "500px",
+      className: "hero-subtitle",
+      videoSrc: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      videoMediaType: "video/mp4",
+      muted: true,
+      loop: true,
+      controls: false,
+      autoPlay: true,
+    },
+  },
+  {
+    route: "hero-no-content",
+    component: HeroWidget,
+    componentProps: {
+      background:
+        "https://assets.fortnitecreativehq.com/wp-content/uploads/2020/11/24084718/7153-0441-1172.jpg",
+      height: "300px",
+      className: "hero-subtitle",
     },
   },
   {

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const StyledNavbar = styled.div`
   width: 90%;
@@ -17,10 +17,10 @@ export const StyledNavbar = styled.div`
 `;
 
 export const Frame = styled.div`
-    height: calc(100vh - 40px);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`
+  height: calc(100vh - 40px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
