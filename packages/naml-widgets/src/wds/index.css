@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Textile;
+  src: url("sunny.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: cadetblue;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.hero {
+  font-family: Textile, sans-serif;
+}
